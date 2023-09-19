@@ -35,8 +35,6 @@ p, h1, h2, h3, h4, h5, h6 {
     --fs: 2rem; /* Numbers */
     --fw-bold: 700;
 
-    /* == Colors == */
-    
     /* = Theme 1 = */
     /* Backgrounds */
     --main-bg-clr: hsl(222, 26%, 31%); /* main background */
@@ -55,4 +53,47 @@ p, h1, h2, h3, h4, h5, h6 {
     /* Text */
     --dark-key-txt-clr: hsl(221, 14%, 31%);
     --light-key-txt-clr: hsl(0, 0%, 100%);
+}
+
+.theme-two {
+    /* = Theme 2 = */
+    /* Backgrounds */
+    --main-bg-clr: hsl(0, 0%, 90%); /* main background */
+    --toggle-keypad-bg-clr: hsl(0, 5%, 81%); /* toggle background, keypad background */
+    --screen-bg-clr: hsl(0, 0%, 93%); /* screen background */
+    /* = Keys = */
+    /* Delete */
+    --del-reset-bg-clr: hsl(185, 42%, 37%); /* key background */
+    --del-reset-shadow-clr: hsl(185, 58%, 25%); /* key shadow */
+    /* Result */
+    --result-bg-clr: hsl(25, 98%, 40%); /* key background, toggle */
+    --result-shadow-clr: hsl(25, 99%, 27%); /* key shadow */
+    /* Key */
+    --key-bg-clr: hsl(45, 7%, 89%); /* key background */
+    --key-shadow-clr: hsl(35, 11%, 61%); /* key shadow */
+    /* Text */
+    --dark-key-txt-clr: hsl(60, 10%, 19%);
+    --light-key-txt-clr: hsl(0, 0%, 100%);
+}
+
+.theme-three {
+    /* = Theme 3 = */
+    /* Backgrounds */
+    --main-bg-clr: hsl(268, 75%, 9%); /* main background */
+    --toggle-keypad-bg-clr: hsl(268, 71%, 12%); /* toggle background, keypad background */
+    --screen-bg-clr: hsl(268, 71%, 12%); /* screen background */
+    /* = Keys = */
+    /* Delete */
+    --del-reset-bg-clr: hsl(281, 89%, 26%); /* key background */
+    --del-reset-shadow-clr: hsl(285, 91%, 52%); /* key shadow */
+    /* Result */
+    --result-bg-clr: hsl(176, 100%, 44%); /* key background, toggle */
+    --result-shadow-clr: hsl(177, 92%, 70%); /* key shadow */
+    /* Key */
+    --key-bg-clr: hsl(268, 47%, 21%); /* key background */
+    --key-shadow-clr: hsl(290, 70%, 36%); /* key shadow */
+    /* Text */
+    --dark-key-txt-clr: hsl(52, 100%, 62%);
+    --light-key-txt-clr: hsl(198, 20%, 13%);
+    --result-key-txt-clr: hsl(0, 0%, 100%);
 }

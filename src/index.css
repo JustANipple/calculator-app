@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+/* === Custom properties === */
+:root {
+    /* == Fonts == */
+    --ff: 'League Spartan', sans-serif;
+    --fs: 2rem; /* Numbers */
+    --fw-bold: 700;
+
+    /* == Colors == */
+    
+    /* = Theme 1 = */
+    /* Backgrounds */
+    --main-bg-clr: hsl(222, 26%, 31%); /* main background */
+    --toggle-keypad-bg-clr: hsl(223, 31%, 20%); /* toggle background, keypad background */
+    --screen-bg-clr: hsl(224, 36%, 15%); /* screen background */
+    /* = Keys = */
+    /* Delete */
+    --del-reset-bg-clr: hsl(225, 21%, 49%); /* key background */
+    --del-reset-shadow-clr: hsl(224, 28%, 35%); /* key shadow */
+    /* Result */
+    --result-bg-clr: hsl(6, 63%, 50%); /* key background, toggle */
+    --result-shadow-clr: hsl(6, 70%, 34%); /* key shadow */
+    /* Key */
+    --key-bg-clr: hsl(30, 25%, 89%); /* key background */
+    --key-shadow-clr: hsl(28, 16%, 65%); /* key shadow */
+    /* Text */
+    --dark-key-txt-clr: hsl(221, 14%, 31%);
+    --light-key-txt-clr: hsl(0, 0%, 100%);
+}

@@ -51,8 +51,8 @@ p, h1, h2, h3, h4, h5, h6 {
     --key-bg-clr: hsl(30, 25%, 89%); /* key background */
     --key-shadow-clr: hsl(28, 16%, 65%); /* key shadow */
     /* Text */
-    --dark-key-txt-clr: hsl(221, 14%, 31%);
-    --light-key-txt-clr: hsl(0, 0%, 100%);
+    --dark-key-txt-clr: hsl(0, 0%, 100%);
+    --light-key-txt-clr: hsl(221, 14%, 31%);
 }
 
 .theme-two {
@@ -93,7 +93,7 @@ p, h1, h2, h3, h4, h5, h6 {
     --key-bg-clr: hsl(268, 47%, 21%); /* key background */
     --key-shadow-clr: hsl(290, 70%, 36%); /* key shadow */
     /* Text */
-    --dark-key-txt-clr: hsl(52, 100%, 62%);
-    --light-key-txt-clr: hsl(198, 20%, 13%);
+    --dark-key-txt-clr: hsl(198, 20%, 13%);
+    --light-key-txt-clr: hsl(52, 100%, 62%);
     --result-key-txt-clr: hsl(0, 0%, 100%);
 }

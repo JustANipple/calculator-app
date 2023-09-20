@@ -1,3 +1,24 @@
-p {
-    color: var(--main-bg-clr);
+body {
+    min-height: 100vh;
+    font-family: var(--ff);
+    background-color: var(--main-bg-clr);
+    transition: background-color .25s ease-in-out, color .25s ease-in-out;
+    display: grid;
+    place-content: center;
+}
+
+.main {
+    padding: 1.75rem 1.5rem;
+    display: grid;
+    row-gap: 2rem;
+}
+
+.top_bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    color: var(--dark-key-txt-clr);
+    padding-inline: .5rem;
 }

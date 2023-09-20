@@ -7,7 +7,7 @@
 .display {
     font-size: calc(var(--fs) * 1.25);
     background-color: var(--screen-bg-clr);
-    color: var(--dark-key-txt-clr);
+    color: var(--title-theme-display-txt-clr);
     padding: 1.5rem;
     border-radius: .5rem;
     line-height: normal;
@@ -43,7 +43,9 @@
     grid-template-columns: 2fr 2fr;
 }
 
-.table_row td {
+/* table data */
+.table_row td,
+.table_row_bottom td {
     background-color: var(--key-bg-clr);
     box-shadow: 0px 4px 0px 0px var(--key-shadow-clr);
     width: 3.75rem;
@@ -51,10 +53,28 @@
     border-radius: .5rem;
 }
 
+.table_row .del,
+.table_row_bottom .reset {
+    background-color: var(--del-reset-bg-clr);
+    box-shadow: 0px 4px 0px 0px var(--del-reset-shadow-clr);
+}
+
+.table_row_bottom .reset {
+    width: 100%;
+}
+
+.table_row_bottom .result {
+    background-color: var(--result-bg-clr);
+    box-shadow: 0px 4px 0px 0px var(--result-shadow-clr);
+    width: 100%;
+}
+
+/* button */
 .table_row td button,
-.table_row_bottom .reset button {
+.table_row_bottom .reset button,
+.table_row_bottom .result button {
     margin-top: .25rem;
-    color: var(--light-key-txt-clr);
+    color: var(--keyboard-num-keys-txt-clr);
     font-size: var(--fs);
     text-transform: uppercase;
     padding: 0;
@@ -62,4 +82,77 @@
     background-color: transparent;
     width: 100%;
     height: 100%;
+}
+
+.table_row .del button,
+.table_row .multiplier button,
+.table_row_bottom .reset button,
+.table_row_bottom .result button {
+    font-size: calc(var(--fs) / 1.675);
+}
+
+.table_row .del button,
+.table_row_bottom .reset button {
+    color: var(--del-reset-txt-clr);
+}
+
+.table_row_bottom .result button {
+    color: var(--result-txt-clr);
+}
+
+@media screen and (min-width: 768px) {
+    .display {
+        font-size: calc(var(--fs) * 1.675);
+        padding: 2.5rem 2rem;
+    }
+    
+    .keyboard {
+        --key-gap: 1.5rem;
+        padding: 2rem 1.875rem;
+    }
+
+    .keyboard_body {
+        row-gap: calc(var(--key-gap) + 4px);
+    }
+
+    /* table data */
+    .table_row td,
+    .table_row_bottom td {
+        width: 6.25rem;
+    }
+
+    /* button */
+    .table_row td button {
+        font-size: calc(var(--fs) * 1.25);
+    }
+
+    .table_row .del button,
+    .table_row .multiplier button,
+    .table_row_bottom .reset button,
+    .table_row_bottom .result button {
+        font-size: calc(var(--fs) / 1.125);
+    }
+
+    /* === on-hover styles === */
+    button:hover {
+        cursor: pointer;
+    }
+
+    .table_row td,
+    .table_row_bottom td {
+        transition: background-color .25s ease-in-out;
+    }
+
+    .table_row td:hover {
+        background-color: var(--num-hover-br-clr);
+    }
+
+    .table_row .del:hover,
+    .table_row_bottom .reset:hover {
+        background-color: var(--del-reset-hover-bg-clr);
+    }
+
+    .table_row_bottom .result:hover {
+        background-color: var(--result-hover-bg-clr);
+    }
 }

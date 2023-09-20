@@ -16,7 +16,7 @@ const Calculator = () => {
                         <td> <button>7</button> </td>
                         <td> <button>8</button> </td>
                         <td> <button>9</button> </td>
-                        <td> <button className={styles.del}>del</button> </td>
+                        <td className={styles.del}> <button>del</button> </td>
                     </tr>
                     <tr className={styles.table_row}>
                         <td> <button>4</button> </td>
@@ -34,7 +34,7 @@ const Calculator = () => {
                         <td> <button>.</button> </td>
                         <td> <button>0</button> </td>
                         <td> <button>/</button> </td>
-                        <td> <button>x</button> </td>
+                        <td className={styles.multiplier}> <button>x</button> </td>
                     </tr>
                     <tr className={styles.table_row_bottom}>
                         <td className={styles.reset}> <button>reset</button> </td>

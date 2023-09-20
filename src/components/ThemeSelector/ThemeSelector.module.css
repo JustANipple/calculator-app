@@ -1,5 +1,5 @@
 .theme_selector {
-    color: var(--dark-key-txt-clr);
+    color: var(--title-theme-display-txt-clr);
     font-size: calc(var(--fs) / 2.5);
     display: flex;
     align-items: flex-end;
@@ -60,4 +60,19 @@
 
 .end {
     transform: translateX(125%);
+}
+
+@media screen and (min-width: 768px) {
+    .label {
+        padding-block: .325rem;
+    }
+
+    /* on-hover styles */
+    .selector_switch:hover {
+        cursor: pointer;
+    }
+
+    .selector_switch:hover .switch_knob {
+        filter: brightness(1.5);
+    }
 }

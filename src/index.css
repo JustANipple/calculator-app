@@ -51,8 +51,14 @@ p, h1, h2, h3, h4, h5, h6 {
     --key-bg-clr: hsl(30, 25%, 89%); /* key background */
     --key-shadow-clr: hsl(28, 16%, 65%); /* key shadow */
     /* Text */
-    --dark-key-txt-clr: hsl(0, 0%, 100%);
-    --light-key-txt-clr: hsl(221, 14%, 31%);
+    --title-theme-display-txt-clr: hsl(0, 0%, 100%);
+    --keyboard-num-keys-txt-clr: hsl(221, 14%, 31%);
+    --del-reset-txt-clr: hsl(0, 0%, 100%);
+    --result-txt-clr: hsl(0, 0%, 100%);
+    /* Hover backgrounds */
+    --num-hover-br-clr: hsl(0, 0%, 100%);
+    --del-reset-hover-bg-clr: hsl(230, 49%, 75%);
+    --result-hover-bg-clr: hsl(8, 79%, 62%);
 }
 
 .theme-two {
@@ -72,8 +78,14 @@ p, h1, h2, h3, h4, h5, h6 {
     --key-bg-clr: hsl(45, 7%, 89%); /* key background */
     --key-shadow-clr: hsl(35, 11%, 61%); /* key shadow */
     /* Text */
-    --dark-key-txt-clr: hsl(60, 10%, 19%);
-    --light-key-txt-clr: hsl(0, 0%, 100%);
+    --title-theme-display-txt-clr: hsl(60, 10%, 19%);
+    --keyboard-num-keys-txt-clr: hsl(60, 10%, 19%);
+    --del-reset-txt-clr: hsl(0, 0%, 100%);
+    --result-txt-clr: hsl(0, 0%, 100%);
+    /* Hover backgrounds */
+    --num-hover-br-clr: hsl(0, 0%, 100%);
+    --del-reset-hover-bg-clr: hsl(188, 35%, 56%);
+    --result-hover-bg-clr: hsl(26, 88%, 57%);
 }
 
 .theme-three {
@@ -93,7 +105,12 @@ p, h1, h2, h3, h4, h5, h6 {
     --key-bg-clr: hsl(268, 47%, 21%); /* key background */
     --key-shadow-clr: hsl(290, 70%, 36%); /* key shadow */
     /* Text */
-    --dark-key-txt-clr: hsl(198, 20%, 13%);
-    --light-key-txt-clr: hsl(52, 100%, 62%);
-    --result-key-txt-clr: hsl(0, 0%, 100%);
+    --title-theme-display-txt-clr: hsl(52, 100%, 62%);
+    --keyboard-num-keys-txt-clr: hsl(52, 100%, 62%);
+    --del-reset-txt-clr: hsl(0, 0%, 100%);
+    --result-txt-clr: hsl(198, 20%, 13%);
+    /* Hover backgrounds */
+    --num-hover-br-clr: hsl(269, 64%, 40%);
+    --del-reset-hover-bg-clr: hsl(279, 67%, 40%);
+    --result-hover-bg-clr: hsl(176, 98%, 81%);
 }

@@ -1,5 +1,5 @@
 body {
-    min-height: 100vh;
+    height: 100vh;
     font-family: var(--ff);
     background-color: var(--main-bg-clr);
     transition: background-color .25s ease-in-out, color .25s ease-in-out;
@@ -19,6 +19,6 @@ body {
 }
 
 .title {
-    color: var(--dark-key-txt-clr);
+    color: var(--title-theme-display-txt-clr);
     padding-inline: .5rem;
 }

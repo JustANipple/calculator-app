@@ -1,11 +1,26 @@
+import { useState } from "react"
 import styles from "./Calculator.module.css"
 
 const Calculator = () => {
 
+    const [display, setDisplay] = useState(0);
+
     function Display() {
         return (
-            <div className={styles.display}>399,981</div>
+            <div className={styles.display}>{display}</div>
         )
+    }
+
+    function Key({ value }) {
+
+        function handleKeyClick() {
+            setDisplay(`${display}${value}`)
+        }
+
+        return (
+            <button onClick={handleKeyClick}>{value}</button>
+        )
+
     }
 
     function Keyboard() {
@@ -13,7 +28,7 @@ const Calculator = () => {
             <table className={styles.keyboard}>
                 <tbody className={styles.keyboard_body}>
                     <tr className={styles.table_row}>
-                        <td> <button>7</button> </td>
+                        <td> <Key value={7}/> </td>
                         <td> <button>8</button> </td>
                         <td> <button>9</button> </td>
                         <td className={styles.del}> <button>del</button> </td>

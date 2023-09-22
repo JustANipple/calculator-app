@@ -14,12 +14,28 @@ const Calculator = () => {
     function Key({ value }) {
 
         function handleKeyClick() {
-            setDisplay(`${display}${value}`)
+            setDisplay(`${parseInt(`${display}${value}`)}`);
         }
 
-        return (
-            <button onClick={handleKeyClick}>{value}</button>
-        )
+        function handleDelClick() {
+            if(display.length > 1) {
+                setDisplay(display.toString().slice(0, display.length - 1));
+            } else {
+                setDisplay(0);
+            }
+        }
+
+        function handleResetClick() {
+            setDisplay(0);
+        }
+
+        if(value === "del") {
+            return <button onClick={handleDelClick} value={value}>{value}</button>
+        } else if (value === "reset") {
+            return <button onClick={handleResetClick} value={value}>{value}</button>
+        } else {
+            return <button onClick={handleKeyClick} value={value}>{value}</button>
+        }
 
     }
 
@@ -29,30 +45,30 @@ const Calculator = () => {
                 <tbody className={styles.keyboard_body}>
                     <tr className={styles.table_row}>
                         <td> <Key value={7}/> </td>
-                        <td> <button>8</button> </td>
-                        <td> <button>9</button> </td>
-                        <td className={styles.del}> <button>del</button> </td>
+                        <td> <Key value={8}/> </td>
+                        <td> <Key value={9}/> </td>
+                        <td className={styles.del}> <Key value={"del"}/> </td>
                     </tr>
                     <tr className={styles.table_row}>
-                        <td> <button>4</button> </td>
-                        <td> <button>5</button> </td>
-                        <td> <button>6</button> </td>
-                        <td> <button>+</button> </td>
+                        <td> <Key value={4}/> </td>
+                        <td> <Key value={5}/> </td>
+                        <td> <Key value={6}/> </td>
+                        <td> <Key value={"+"}/> </td>
                     </tr>
                     <tr className={styles.table_row}>
-                        <td> <button>1</button> </td>
-                        <td> <button>2</button> </td>
-                        <td> <button>3</button> </td>
-                        <td> <button>-</button> </td>
+                        <td> <Key value={1}/> </td>
+                        <td> <Key value={2}/> </td>
+                        <td> <Key value={3}/> </td>
+                        <td> <Key value={"-"}/> </td>
                     </tr>
                     <tr className={styles.table_row}>
-                        <td> <button>.</button> </td>
-                        <td> <button>0</button> </td>
-                        <td> <button>/</button> </td>
-                        <td className={styles.multiplier}> <button>x</button> </td>
+                        <td> <Key value={"."}/> </td>
+                        <td> <Key value={0}/> </td>
+                        <td> <Key value={"/"}/> </td>
+                        <td className={styles.multiplier}> <Key value={"x"}/> </td>
                     </tr>
                     <tr className={styles.table_row_bottom}>
-                        <td className={styles.reset}> <button>reset</button> </td>
+                        <td className={styles.reset}> <Key value={"reset"}/> </td>
                         <td className={styles.result}> <button>=</button> </td>
                     </tr>
                 </tbody>

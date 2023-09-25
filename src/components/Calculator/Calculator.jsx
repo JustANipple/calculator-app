@@ -1,9 +1,12 @@
 import { useState } from "react"
 import styles from "./Calculator.module.css"
+import PropTypes from 'prop-types'
 
 const Calculator = () => {
 
     const [display, setDisplay] = useState(0);
+    const [number, setNumber] = useState(0);
+    const [operation, setOperation] = useState();
 
     function Display() {
         return (
@@ -12,11 +15,15 @@ const Calculator = () => {
     }
 
     function Key({ value }) {
-
+        //number key event
         function handleKeyClick() {
-            setDisplay(`${parseInt(`${display}${value}`)}`);
+            if(display === 0) {
+                setDisplay(value);
+            } else {
+                setDisplay(`${display}${value}`);
+            }
         }
-
+        //delete key event
         function handleDelClick() {
             if(display.length > 1) {
                 setDisplay(display.toString().slice(0, display.length - 1));
@@ -24,20 +31,41 @@ const Calculator = () => {
                 setDisplay(0);
             }
         }
-
+        //reset key event
         function handleResetClick() {
-            setDisplay(0);
+        }
+        //dot key event
+        function handleDotClick() {
+        }
+        //operation key event
+        function handleOperationClick(value) {
+        }
+
+        //result key event
+        function handleResultClick() {
         }
 
         if(value === "del") {
             return <button onClick={handleDelClick} value={value}>{value}</button>
         } else if (value === "reset") {
             return <button onClick={handleResetClick} value={value}>{value}</button>
+        } else if (value === "+" || value === "-" || value === "x" || value === "/") {
+            return <button onClick={() => handleOperationClick(value)} value={value}>{value}</button>
+        } else if (value === ".") {
+            return <button onClick={handleDotClick} value={value}>{value}</button>
+        } else if (value === "=") {
+            return <button onClick={handleResultClick} value={value}>{value}</button>
         } else {
             return <button onClick={handleKeyClick} value={value}>{value}</button>
         }
-
     }
+
+    Key.propTypes = {
+        value: PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.string
+        ])
+    };
 
     function Keyboard() {
         return (
@@ -69,7 +97,7 @@ const Calculator = () => {
                     </tr>
                     <tr className={styles.table_row_bottom}>
                         <td className={styles.reset}> <Key value={"reset"}/> </td>
-                        <td className={styles.result}> <button>=</button> </td>
+                        <td className={styles.result}> <Key value={"="}/> </td>
                     </tr>
                 </tbody>
             </table>
@@ -83,5 +111,7 @@ const Calculator = () => {
         </div>
     )
 }
+
+
 
 export default Calculator

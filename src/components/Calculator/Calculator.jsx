@@ -25,7 +25,7 @@ const Calculator = () => {
         }
         //delete key event
         function handleDelClick() {
-            if(display.length > 1) {
+            if(currentNum.length > 1) {
                 setCurrentNum(currentNum.toString().slice(0, currentNum.length - 1));
             } else {
                 setCurrentNum(0);
@@ -34,15 +34,30 @@ const Calculator = () => {
         //reset key event
         function handleResetClick() {
             setCurrentNum(0);
+            setOperation("");
         }
         //dot key event
         function handleDotClick() {
+            if(!currentNum.toString().includes(".")) {
+                setCurrentNum(`${currentNum}${value}`)
+            }
         }
         //operation key event
         function handleOperationClick(value) {
-            if(value === "+") { 
-                setPrevNum(prevNum + currentNum);
-                setOperation("+");
+            setPrevNum(currentNum);
+            switch(value) {
+                case "+":
+                    setOperation("+");
+                    break;
+                case "-":
+                    setOperation("-");
+                    break;
+                case "x":
+                    setOperation("*");
+                    break;
+                case "/":
+                    setOperation("/");
+                    break;
             }
             setCurrentNum(0);
         }
@@ -52,21 +67,22 @@ const Calculator = () => {
             let result = 0;
             switch(operation) {
                 case "+":
-                    result = currentNum + prevNum;
+                    result = prevNum + currentNum;
                     break;
                 case "-":
-                    result = currentNum + prevNum;
+                    result = prevNum - currentNum;
                     break;
                 case "*":
-                    result = currentNum + prevNum;
+                    result = prevNum * currentNum;
                     break;
                 case "/":
-                    result = currentNum + prevNum;
+                    result = prevNum / currentNum;
                     break;
                 default:
                     result = -1;
             }
             setCurrentNum(result);
+            setPrevNum(0);
         }
 
         if(value === "del") {

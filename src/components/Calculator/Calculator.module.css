@@ -16,6 +16,10 @@
     align-items: center;
 }
 
+.display_txt {
+    max-width: 11ch;
+}
+
 .keyboard {
     --key-gap: .8125rem;
     background-color: var(--toggle-keypad-bg-clr);

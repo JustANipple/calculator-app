@@ -10,17 +10,21 @@ const Calculator = () => {
 
     function Display() {
         return (
-            <div className={styles.display}>{currentNum}</div>
+            <div className={styles.display}> 
+                <p className={styles.display_txt}>{currentNum}</p> 
+            </div>
         )
     }
 
     function Key({ value }) {
         //number key event
         function handleKeyClick() {
-            if(currentNum === 0) {
-                setCurrentNum(value);
-            } else {
-                setCurrentNum(`${currentNum}${value}`);
+            if(currentNum.toString().length < 12) {
+                if(currentNum === 0) {
+                    setCurrentNum(value);
+                } else {
+                    setCurrentNum(`${currentNum}${value}`);
+                }
             }
         }
         //delete key event
@@ -103,7 +107,7 @@ const Calculator = () => {
                     result = prevNum / Number(currentNum);
                     break;
             }
-            setCurrentNum(Number(result).toFixed(10));
+            setCurrentNum(Number(result));
             setPrevNum(0);
         }
 

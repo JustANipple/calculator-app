@@ -44,6 +44,7 @@ const ThemeSelector = () => {
                 </ul>
                 <button 
                     className={styles.selector_switch}
+                    aria-label="theme-selector"
                     onClick={handleClick}
                 >
                     <div className={`${styles.switch_knob} ${styles[knob]}`}></div>

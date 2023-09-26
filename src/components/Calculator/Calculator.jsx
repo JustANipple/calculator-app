@@ -29,6 +29,7 @@ const Calculator = () => {
                 setCurrentNum(currentNum.toString().slice(0, currentNum.length - 1));
             } else {
                 setCurrentNum(0);
+                setOperation("");
             }
         }
         //reset key event
@@ -44,7 +45,7 @@ const Calculator = () => {
         }
         //operation key event
         function handleOperationClick(value) {
-            setPrevNum(currentNum);
+            setPrevNum(Number(currentNum));
             switch(value) {
                 case "+":
                     setOperation("+");
@@ -78,10 +79,8 @@ const Calculator = () => {
                 case "/":
                     result = prevNum / currentNum;
                     break;
-                default:
-                    result = -1;
             }
-            setCurrentNum(result);
+            setCurrentNum(Number(result));
             setPrevNum(0);
         }
 

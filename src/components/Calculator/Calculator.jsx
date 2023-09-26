@@ -4,45 +4,69 @@ import PropTypes from 'prop-types'
 
 const Calculator = () => {
 
-    const [display, setDisplay] = useState(0);
-    const [number, setNumber] = useState(0);
-    const [operation, setOperation] = useState();
+    const [currentNum, setCurrentNum] = useState(0);
+    const [prevNum, setPrevNum] = useState(0);
+    const [operation, setOperation] = useState("");
 
     function Display() {
         return (
-            <div className={styles.display}>{display}</div>
+            <div className={styles.display}>{currentNum}</div>
         )
     }
 
     function Key({ value }) {
         //number key event
         function handleKeyClick() {
-            if(display === 0) {
-                setDisplay(value);
+            if(currentNum === 0) {
+                setCurrentNum(value);
             } else {
-                setDisplay(`${display}${value}`);
+                setCurrentNum(Number(`${currentNum}${value}`));
             }
         }
         //delete key event
         function handleDelClick() {
             if(display.length > 1) {
-                setDisplay(display.toString().slice(0, display.length - 1));
+                setCurrentNum(currentNum.toString().slice(0, currentNum.length - 1));
             } else {
-                setDisplay(0);
+                setCurrentNum(0);
             }
         }
         //reset key event
         function handleResetClick() {
+            setCurrentNum(0);
         }
         //dot key event
         function handleDotClick() {
         }
         //operation key event
         function handleOperationClick(value) {
+            if(value === "+") { 
+                setPrevNum(prevNum + currentNum);
+                setOperation("+");
+            }
+            setCurrentNum(0);
         }
 
         //result key event
         function handleResultClick() {
+            let result = 0;
+            switch(operation) {
+                case "+":
+                    result = currentNum + prevNum;
+                    break;
+                case "-":
+                    result = currentNum + prevNum;
+                    break;
+                case "*":
+                    result = currentNum + prevNum;
+                    break;
+                case "/":
+                    result = currentNum + prevNum;
+                    break;
+                default:
+                    result = -1;
+            }
+            setCurrentNum(result);
         }
 
         if(value === "del") {

@@ -20,7 +20,7 @@ const Calculator = () => {
             if(currentNum === 0) {
                 setCurrentNum(value);
             } else {
-                setCurrentNum(Number(`${currentNum}${value}`));
+                setCurrentNum(`${currentNum}${value}`);
             }
         }
         //delete key event
@@ -60,11 +60,13 @@ const Calculator = () => {
                     setOperation("/");
                     break;
             }
+            if(currentNum !== 0 && prevNum !== 0 && operation !== "") {
+                makeOperation();
+            }
             setCurrentNum(0);
         }
 
-        //result key event
-        function handleResultClick() {
+        function makeOperation() {
             let result = 0;
             switch(operation) {
                 case "+":
@@ -80,7 +82,28 @@ const Calculator = () => {
                     result = prevNum / currentNum;
                     break;
             }
-            setCurrentNum(Number(result));
+            setPrevNum(result);
+            setCurrentNum(0);
+        }
+
+        //result key event
+        function handleResultClick() {
+            let result = 0;
+            switch(operation) {
+                case "+":
+                    result = prevNum + Number(currentNum);
+                    break;
+                case "-":
+                    result = prevNum - Number(currentNum);
+                    break;
+                case "*":
+                    result = prevNum * Number(currentNum);
+                    break;
+                case "/":
+                    result = prevNum / Number(currentNum);
+                    break;
+            }
+            setCurrentNum(Number(result).toFixed(10));
             setPrevNum(0);
         }
 
